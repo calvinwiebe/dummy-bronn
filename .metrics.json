@@ -1,0 +1,23 @@
+{
+    "builds": {
+        "list": [{
+            "name": "build1",
+            "cmd": "echo 'I am here to simply clone the repo'",
+            "wavesCmd": "echo 'I am here to simply clone the repo with waves'"
+        }]
+    },
+    "regressions": [{
+        "name": "dummy",
+        "description": "A dummy regression",
+        "tests": {
+            "list": [
+                {
+                    "name": "test1",
+                    "cmd": "echo 'passed' > output.log",
+                    "wavesCmd": "echo 'passed' > output.log",
+                    "isPass": ["passed"]
+                }
+            ]
+        }
+    }]
+}
