@@ -12,6 +12,7 @@
         "tests": {
             "list": [
                 {
+                    "build": "build1",
                     "name": "test1",
                     "cmd": "echo 'passed' > output.log",
                     "wavesCmd": "echo 'passed' > output.log",
