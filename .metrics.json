@@ -10,12 +10,14 @@
         "name": "dummy",
         "description": "A dummy regression",
         "tests": {
+            "resultsDir": "<rootDir>",
             "list": [
                 {
                     "build": "build1",
                     "name": "test1",
                     "cmd": "echo 'passed' > output.log",
                     "wavesCmd": "echo 'passed' > output.log",
+                    "logFile": "output.log",
                     "isPass": ["passed"]
                 }
             ]
