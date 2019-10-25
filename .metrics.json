@@ -17,7 +17,7 @@
                     "build": "build1",
                     "name": "test1",
                     "cmd": "echo 'passed' > output.log",
-                    "wavesCmd": "echo 'passed' > output.log",
+                    "wavesCmd": "echo 'passed w waves' > output.log",
                     "logFile": "output.log",
                     "isPass": ["passed"]
                 }
