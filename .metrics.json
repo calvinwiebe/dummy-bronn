@@ -1,7 +1,6 @@
 {
     "builds": {
         "list": [{
-            "id": "feb34e3b-b5a8-47f4-b640-ab016c662f86",
             "name": "build1",
             "cmd": "echo 'I am here to simply clone the repo'",
             "wavesCmd": "echo 'I am here to simply clone the repo with waves'"
