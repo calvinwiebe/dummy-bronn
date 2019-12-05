@@ -10,6 +10,7 @@
         "name": "dummy",
         "description": "A dummy regression",
         "tests": {
+            "builds": ["build1"],
             "listCmd": "echo 'I do nothing'",
             "listFile": "<rootDir>/testList.json"
         }
