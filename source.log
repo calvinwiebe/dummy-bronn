@@ -1,0 +1,700 @@
+mkdir -p /mux-flow/build/results
+cd /mux-flow/build/results && dsim \
+	-timescale 1ns/1ps \
+	/mux-flow/build/repo/cv32/tests/core/../../../rtl/include/apu_core_package.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/include/fpnew_pkg.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/include/riscv_defines.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/include/riscv_tracer_defines.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_if_stage.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_hwloop_controller.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_tracer.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_prefetch_buffer.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_decoder.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/cluster_clock_gating.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_cs_registers.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_register_file.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_load_store_unit.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_id_stage.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_core.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_compressed_decoder.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_fetch_fifo.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_alu_div.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_prefetch_L0_buffer.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_hwloop_regs.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_mult.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/register_file_test_wrap.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_L0_buffer.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_int_controller.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_ex_stage.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_alu_basic.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_pmp.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_apu_disp.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_alu.sv /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_controller.sv /mux-flow/build/repo/cv32/tests/core/../../tb/tb_riscv/include/perturbation_defines.sv /mux-flow/build/repo/cv32/tests/core/../../tb/core/tb_top.sv /mux-flow/build/repo/cv32/tests/core/../../tb/core/riscv_wrapper.sv /mux-flow/build/repo/cv32/tests/core/../../tb/core/mm_ram.sv /mux-flow/build/repo/cv32/tests/core/../../tb/core/dp_ram.sv /mux-flow/build/repo/cv32/tests/core/../../tb/tb_riscv/riscv_random_stall.sv /mux-flow/build/repo/cv32/tests/core/../../tb/tb_riscv/riscv_random_interrupt_generator.sv \
+	+incdir+/mux-flow/build/repo/cv32/tests/core/../../../rtl/include \
+	-work /mux-flow/build/repo/dsim_work \
+	-genimage dsim.out
+Copyright (C) 2017-2019 Metrics Technologies Inc. All rights reserved.
+This program is licensed for the exclusive use of demo,
+and may not be used otherwise without written permission from Metrics Technologies Inc.
+Analyzing...
+Elaborating...
+  Top-level modules:
+    $unit
+    riscv_alu_basic
+    tb_top
+=W:[DuplicateCaseItem]:
+    The following case items appear more than once in
+    a case statement.  Since the first action takes precedence
+    any duplicates are effectively ignored.
+
+    /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_tracer.sv:630:11    /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_tracer.sv:629:11
+
+=W:[IndexOOB]:
+    Array index expression is out of bounds:
+
+                                                                             Declared bounds    Expression index
+
+    /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_pmp.sv:204:38    [15:0]             -1
+
+=W:[PortWidthMismatch]:
+    The packed-array signals of the following differ in width:
+
+                                                                           module:port                       formal    actual
+
+    /mux-flow/build/repo/cv32/tests/core/../../tb/core/mm_ram.sv:586:27    riscv_random_stall:addr_core_i    32        22
+
+    /mux-flow/build/repo/cv32/tests/core/../../tb/core/mm_ram.sv:587:27    riscv_random_stall:addr_mem_o     32        22
+
+    /mux-flow/build/repo/cv32/tests/core/../../tb/core/mm_ram.sv:622:27    riscv_random_stall:addr_core_i    32        22
+
+    /mux-flow/build/repo/cv32/tests/core/../../tb/core/mm_ram.sv:623:27    riscv_random_stall:addr_mem_o     32        22
+
+  Found 34 unique specialization(s) of 33 design element(s).
+=W:[LatchNotInferred]:
+    The following variables in always_latch blocks are written
+    along all paths through the block.  Latches will not be inferred:
+
+    /mux-flow/build/repo/cv32/tests/core/../../tb/tb_riscv/riscv_random_stall.sv:100:2    rvalid_per_q
+
+    /mux-flow/build/repo/cv32/tests/core/../../tb/tb_riscv/riscv_random_stall.sv:109:1    grant_per_q
+
+    /mux-flow/build/repo/cv32/tests/core/../../tb/tb_riscv/riscv_random_stall.sv:92:2     req_per_q
+
+=W:[LatchInferred]:
+    The following variables in always_comb blocks are not written
+    along all paths through the block.  Latches will be inferred:
+
+    /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_register_file.sv:109:3    we_a_dec
+
+    /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_register_file.sv:119:3    we_b_dec
+
+    /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_cs_registers.sv:1148:3    PCCR_inc
+                                                                                      PCCR_n
+
+    /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_if_stage.sv:130:3         trap_base_addr
+
+    /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_pmp.sv:575:4              data_match_region
+
+    /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_pmp.sv:704:4              instr_match_region
+
+=W:[AlwaysFFNba]:
+    The following variables in always_ff blocks are not written
+    using non-blocking assignments:
+
+    /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_hwloop_regs.sv:106:3    i
+
+    /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_tracer.sv:728:3         cycles
+
+Optimizing...
+Building models...
+Simulation time precision is 1ps.
+Linking dsim.out.so...
+  [17/29] module riscv_controller#(0): 33 functions, 531 basic blocks
+  DSim version: 20191112.3.0 (b:S #c:28 h:4cb4e3f59)
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32imc -D RUN_COMPLIANCE -g -o cv32_riscv_compliance_tests_firmware/start.o cv32_riscv_compliance_tests_firmware/start.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32ic -g -Os --std=c99 -Wall \
+	-Iriscv_tests/ -Iriscv_tests/macros/scalar -Iriscv_tests/rv64ui -Iriscv_tests/rv64um \
+	-ffreestanding -nostdlib -o cv32_riscv_compliance_tests_firmware/print.o cv32_riscv_compliance_tests_firmware/print.c
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32ic -g -Os --std=c99 -Wall \
+	-Iriscv_tests/ -Iriscv_tests/macros/scalar -Iriscv_tests/rv64ui -Iriscv_tests/rv64um \
+	-ffreestanding -nostdlib -o cv32_riscv_compliance_tests_firmware/sieve.o cv32_riscv_compliance_tests_firmware/sieve.c
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32ic -g -Os --std=c99 -Wall \
+	-Iriscv_tests/ -Iriscv_tests/macros/scalar -Iriscv_tests/rv64ui -Iriscv_tests/rv64um \
+	-ffreestanding -nostdlib -o cv32_riscv_compliance_tests_firmware/multest.o cv32_riscv_compliance_tests_firmware/multest.c
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32ic -g -Os --std=c99 -Wall \
+	-Iriscv_tests/ -Iriscv_tests/macros/scalar -Iriscv_tests/rv64ui -Iriscv_tests/rv64um \
+	-ffreestanding -nostdlib -o cv32_riscv_compliance_tests_firmware/stats.o cv32_riscv_compliance_tests_firmware/stats.c
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-RF_x0-01.o \
+	-DTEST_FUNC_NAME=I_RF_x0_01 \
+	-DTEST_FUNC_TXT='"I_RF_x0_01"' \
+	-DTEST_FUNC_RET=I_RF_x0_01_ret riscv_compliance_tests/I-RF_x0-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-ADDI-01.o \
+	-DTEST_FUNC_NAME=I_ADDI_01 \
+	-DTEST_FUNC_TXT='"I_ADDI_01"' \
+	-DTEST_FUNC_RET=I_ADDI_01_ret riscv_compliance_tests/I-ADDI-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-SH-01.o \
+	-DTEST_FUNC_NAME=I_SH_01 \
+	-DTEST_FUNC_TXT='"I_SH_01"' \
+	-DTEST_FUNC_RET=I_SH_01_ret riscv_compliance_tests/I-SH-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-SLTU-01.o \
+	-DTEST_FUNC_NAME=I_SLTU_01 \
+	-DTEST_FUNC_TXT='"I_SLTU_01"' \
+	-DTEST_FUNC_RET=I_SLTU_01_ret riscv_compliance_tests/I-SLTU-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-CSRRWI-01.o \
+	-DTEST_FUNC_NAME=I_CSRRWI_01 \
+	-DTEST_FUNC_TXT='"I_CSRRWI_01"' \
+	-DTEST_FUNC_RET=I_CSRRWI_01_ret riscv_compliance_tests/I-CSRRWI-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-CSRRCI-01.o \
+	-DTEST_FUNC_NAME=I_CSRRCI_01 \
+	-DTEST_FUNC_TXT='"I_CSRRCI_01"' \
+	-DTEST_FUNC_RET=I_CSRRCI_01_ret riscv_compliance_tests/I-CSRRCI-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-SUB-01.o \
+	-DTEST_FUNC_NAME=I_SUB_01 \
+	-DTEST_FUNC_TXT='"I_SUB_01"' \
+	-DTEST_FUNC_RET=I_SUB_01_ret riscv_compliance_tests/I-SUB-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-XORI-01.o \
+	-DTEST_FUNC_NAME=I_XORI_01 \
+	-DTEST_FUNC_TXT='"I_XORI_01"' \
+	-DTEST_FUNC_RET=I_XORI_01_ret riscv_compliance_tests/I-XORI-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-XOR-01.o \
+	-DTEST_FUNC_NAME=I_XOR_01 \
+	-DTEST_FUNC_TXT='"I_XOR_01"' \
+	-DTEST_FUNC_RET=I_XOR_01_ret riscv_compliance_tests/I-XOR-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-JAL-01.o \
+	-DTEST_FUNC_NAME=I_JAL_01 \
+	-DTEST_FUNC_TXT='"I_JAL_01"' \
+	-DTEST_FUNC_RET=I_JAL_01_ret riscv_compliance_tests/I-JAL-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-ENDIANESS-01.o \
+	-DTEST_FUNC_NAME=I_ENDIANESS_01 \
+	-DTEST_FUNC_TXT='"I_ENDIANESS_01"' \
+	-DTEST_FUNC_RET=I_ENDIANESS_01_ret riscv_compliance_tests/I-ENDIANESS-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-CSRRS-01.o \
+	-DTEST_FUNC_NAME=I_CSRRS_01 \
+	-DTEST_FUNC_TXT='"I_CSRRS_01"' \
+	-DTEST_FUNC_RET=I_CSRRS_01_ret riscv_compliance_tests/I-CSRRS-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-EBREAK-01.o \
+	-DTEST_FUNC_NAME=I_EBREAK_01 \
+	-DTEST_FUNC_TXT='"I_EBREAK_01"' \
+	-DTEST_FUNC_RET=I_EBREAK_01_ret riscv_compliance_tests/I-EBREAK-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-ADD-01.o \
+	-DTEST_FUNC_NAME=I_ADD_01 \
+	-DTEST_FUNC_TXT='"I_ADD_01"' \
+	-DTEST_FUNC_RET=I_ADD_01_ret riscv_compliance_tests/I-ADD-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-RF_width-01.o \
+	-DTEST_FUNC_NAME=I_RF_width_01 \
+	-DTEST_FUNC_TXT='"I_RF_width_01"' \
+	-DTEST_FUNC_RET=I_RF_width_01_ret riscv_compliance_tests/I-RF_width-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-CSRRW-01.o \
+	-DTEST_FUNC_NAME=I_CSRRW_01 \
+	-DTEST_FUNC_TXT='"I_CSRRW_01"' \
+	-DTEST_FUNC_RET=I_CSRRW_01_ret riscv_compliance_tests/I-CSRRW-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-SRA-01.o \
+	-DTEST_FUNC_NAME=I_SRA_01 \
+	-DTEST_FUNC_TXT='"I_SRA_01"' \
+	-DTEST_FUNC_RET=I_SRA_01_ret riscv_compliance_tests/I-SRA-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-BLT-01.o \
+	-DTEST_FUNC_NAME=I_BLT_01 \
+	-DTEST_FUNC_TXT='"I_BLT_01"' \
+	-DTEST_FUNC_RET=I_BLT_01_ret riscv_compliance_tests/I-BLT-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-SLL-01.o \
+	-DTEST_FUNC_NAME=I_SLL_01 \
+	-DTEST_FUNC_TXT='"I_SLL_01"' \
+	-DTEST_FUNC_RET=I_SLL_01_ret riscv_compliance_tests/I-SLL-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-BGE-01.o \
+	-DTEST_FUNC_NAME=I_BGE_01 \
+	-DTEST_FUNC_TXT='"I_BGE_01"' \
+	-DTEST_FUNC_RET=I_BGE_01_ret riscv_compliance_tests/I-BGE-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-BLTU-01.o \
+	-DTEST_FUNC_NAME=I_BLTU_01 \
+	-DTEST_FUNC_TXT='"I_BLTU_01"' \
+	-DTEST_FUNC_RET=I_BLTU_01_ret riscv_compliance_tests/I-BLTU-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-DELAY_SLOTS-01.o \
+	-DTEST_FUNC_NAME=I_DELAY_SLOTS_01 \
+	-DTEST_FUNC_TXT='"I_DELAY_SLOTS_01"' \
+	-DTEST_FUNC_RET=I_DELAY_SLOTS_01_ret riscv_compliance_tests/I-DELAY_SLOTS-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-SRLI-01.o \
+	-DTEST_FUNC_NAME=I_SRLI_01 \
+	-DTEST_FUNC_TXT='"I_SRLI_01"' \
+	-DTEST_FUNC_RET=I_SRLI_01_ret riscv_compliance_tests/I-SRLI-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-LBU-01.o \
+	-DTEST_FUNC_NAME=I_LBU_01 \
+	-DTEST_FUNC_TXT='"I_LBU_01"' \
+	-DTEST_FUNC_RET=I_LBU_01_ret riscv_compliance_tests/I-LBU-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-ORI-01.o \
+	-DTEST_FUNC_NAME=I_ORI_01 \
+	-DTEST_FUNC_TXT='"I_ORI_01"' \
+	-DTEST_FUNC_RET=I_ORI_01_ret riscv_compliance_tests/I-ORI-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-RF_size-01.o \
+	-DTEST_FUNC_NAME=I_RF_size_01 \
+	-DTEST_FUNC_TXT='"I_RF_size_01"' \
+	-DTEST_FUNC_RET=I_RF_size_01_ret riscv_compliance_tests/I-RF_size-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-BEQ-01.o \
+	-DTEST_FUNC_NAME=I_BEQ_01 \
+	-DTEST_FUNC_TXT='"I_BEQ_01"' \
+	-DTEST_FUNC_RET=I_BEQ_01_ret riscv_compliance_tests/I-BEQ-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-IO.o \
+	-DTEST_FUNC_NAME=I_IO \
+	-DTEST_FUNC_TXT='"I_IO"' \
+	-DTEST_FUNC_RET=I_IO_ret riscv_compliance_tests/I-IO.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-SLLI-01.o \
+	-DTEST_FUNC_NAME=I_SLLI_01 \
+	-DTEST_FUNC_TXT='"I_SLLI_01"' \
+	-DTEST_FUNC_RET=I_SLLI_01_ret riscv_compliance_tests/I-SLLI-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-AND-01.o \
+	-DTEST_FUNC_NAME=I_AND_01 \
+	-DTEST_FUNC_TXT='"I_AND_01"' \
+	-DTEST_FUNC_RET=I_AND_01_ret riscv_compliance_tests/I-AND-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-LW-01.o \
+	-DTEST_FUNC_NAME=I_LW_01 \
+	-DTEST_FUNC_TXT='"I_LW_01"' \
+	-DTEST_FUNC_RET=I_LW_01_ret riscv_compliance_tests/I-LW-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-LHU-01.o \
+	-DTEST_FUNC_NAME=I_LHU_01 \
+	-DTEST_FUNC_TXT='"I_LHU_01"' \
+	-DTEST_FUNC_RET=I_LHU_01_ret riscv_compliance_tests/I-LHU-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-CSRRC-01.o \
+	-DTEST_FUNC_NAME=I_CSRRC_01 \
+	-DTEST_FUNC_TXT='"I_CSRRC_01"' \
+	-DTEST_FUNC_RET=I_CSRRC_01_ret riscv_compliance_tests/I-CSRRC-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-SRAI-01.o \
+	-DTEST_FUNC_NAME=I_SRAI_01 \
+	-DTEST_FUNC_TXT='"I_SRAI_01"' \
+	-DTEST_FUNC_RET=I_SRAI_01_ret riscv_compliance_tests/I-SRAI-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-SW-01.o \
+	-DTEST_FUNC_NAME=I_SW_01 \
+	-DTEST_FUNC_TXT='"I_SW_01"' \
+	-DTEST_FUNC_RET=I_SW_01_ret riscv_compliance_tests/I-SW-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-FENCE.I-01.o \
+	-DTEST_FUNC_NAME=I_FENCE.I_01 \
+	-DTEST_FUNC_TXT='"I_FENCE.I_01"' \
+	-DTEST_FUNC_RET=I_FENCE.I_01_ret riscv_compliance_tests/I-FENCE.I-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-NOP-01.o \
+	-DTEST_FUNC_NAME=I_NOP_01 \
+	-DTEST_FUNC_TXT='"I_NOP_01"' \
+	-DTEST_FUNC_RET=I_NOP_01_ret riscv_compliance_tests/I-NOP-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-ECALL-01.o \
+	-DTEST_FUNC_NAME=I_ECALL_01 \
+	-DTEST_FUNC_TXT='"I_ECALL_01"' \
+	-DTEST_FUNC_RET=I_ECALL_01_ret riscv_compliance_tests/I-ECALL-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-LH-01.o \
+	-DTEST_FUNC_NAME=I_LH_01 \
+	-DTEST_FUNC_TXT='"I_LH_01"' \
+	-DTEST_FUNC_RET=I_LH_01_ret riscv_compliance_tests/I-LH-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-LUI-01.o \
+	-DTEST_FUNC_NAME=I_LUI_01 \
+	-DTEST_FUNC_TXT='"I_LUI_01"' \
+	-DTEST_FUNC_RET=I_LUI_01_ret riscv_compliance_tests/I-LUI-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-SLTI-01.o \
+	-DTEST_FUNC_NAME=I_SLTI_01 \
+	-DTEST_FUNC_TXT='"I_SLTI_01"' \
+	-DTEST_FUNC_RET=I_SLTI_01_ret riscv_compliance_tests/I-SLTI-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-SLTIU-01.o \
+	-DTEST_FUNC_NAME=I_SLTIU_01 \
+	-DTEST_FUNC_TXT='"I_SLTIU_01"' \
+	-DTEST_FUNC_RET=I_SLTIU_01_ret riscv_compliance_tests/I-SLTIU-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-JALR-01.o \
+	-DTEST_FUNC_NAME=I_JALR_01 \
+	-DTEST_FUNC_TXT='"I_JALR_01"' \
+	-DTEST_FUNC_RET=I_JALR_01_ret riscv_compliance_tests/I-JALR-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-SRL-01.o \
+	-DTEST_FUNC_NAME=I_SRL_01 \
+	-DTEST_FUNC_TXT='"I_SRL_01"' \
+	-DTEST_FUNC_RET=I_SRL_01_ret riscv_compliance_tests/I-SRL-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-AUIPC-01.o \
+	-DTEST_FUNC_NAME=I_AUIPC_01 \
+	-DTEST_FUNC_TXT='"I_AUIPC_01"' \
+	-DTEST_FUNC_RET=I_AUIPC_01_ret riscv_compliance_tests/I-AUIPC-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-CSRRSI-01.o \
+	-DTEST_FUNC_NAME=I_CSRRSI_01 \
+	-DTEST_FUNC_TXT='"I_CSRRSI_01"' \
+	-DTEST_FUNC_RET=I_CSRRSI_01_ret riscv_compliance_tests/I-CSRRSI-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-BGEU-01.o \
+	-DTEST_FUNC_NAME=I_BGEU_01 \
+	-DTEST_FUNC_TXT='"I_BGEU_01"' \
+	-DTEST_FUNC_RET=I_BGEU_01_ret riscv_compliance_tests/I-BGEU-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-OR-01.o \
+	-DTEST_FUNC_NAME=I_OR_01 \
+	-DTEST_FUNC_TXT='"I_OR_01"' \
+	-DTEST_FUNC_RET=I_OR_01_ret riscv_compliance_tests/I-OR-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-ANDI-01.o \
+	-DTEST_FUNC_NAME=I_ANDI_01 \
+	-DTEST_FUNC_TXT='"I_ANDI_01"' \
+	-DTEST_FUNC_RET=I_ANDI_01_ret riscv_compliance_tests/I-ANDI-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-BNE-01.o \
+	-DTEST_FUNC_NAME=I_BNE_01 \
+	-DTEST_FUNC_TXT='"I_BNE_01"' \
+	-DTEST_FUNC_RET=I_BNE_01_ret riscv_compliance_tests/I-BNE-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-SB-01.o \
+	-DTEST_FUNC_NAME=I_SB_01 \
+	-DTEST_FUNC_TXT='"I_SB_01"' \
+	-DTEST_FUNC_RET=I_SB_01_ret riscv_compliance_tests/I-SB-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-SLT-01.o \
+	-DTEST_FUNC_NAME=I_SLT_01 \
+	-DTEST_FUNC_TXT='"I_SLT_01"' \
+	-DTEST_FUNC_RET=I_SLT_01_ret riscv_compliance_tests/I-SLT-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -c -march=rv32im -g -o riscv_compliance_tests/I-LB-01.o \
+	-DTEST_FUNC_NAME=I_LB_01 \
+	-DTEST_FUNC_TXT='"I_LB_01"' \
+	-DTEST_FUNC_RET=I_LB_01_ret riscv_compliance_tests/I-LB-01.S
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-gcc -g -Os -march=rv32imc -ffreestanding -nostdlib -o cv32_riscv_compliance_tests_firmware/cv32_riscv_compliance_tests_firmware.elf \
+	-D RUN_COMPLIANCE \
+	-Iriscv_tests/ -Iriscv_tests/macros/scalar -Iriscv_tests/rv64ui -Iriscv_tests/rv64um \
+	-Wl,-Bstatic,-T,cv32_riscv_compliance_tests_firmware/link.ld,-Map,cv32_riscv_compliance_tests_firmware/cv32_riscv_compliance_tests_firmware.map,--strip-debug \
+	cv32_riscv_compliance_tests_firmware/start.o cv32_riscv_compliance_tests_firmware/print.o cv32_riscv_compliance_tests_firmware/sieve.o cv32_riscv_compliance_tests_firmware/multest.o cv32_riscv_compliance_tests_firmware/stats.o riscv_compliance_tests/I-RF_x0-01.o riscv_compliance_tests/I-ADDI-01.o riscv_compliance_tests/I-SH-01.o riscv_compliance_tests/I-SLTU-01.o riscv_compliance_tests/I-CSRRWI-01.o riscv_compliance_tests/I-CSRRCI-01.o riscv_compliance_tests/I-SUB-01.o riscv_compliance_tests/I-XORI-01.o riscv_compliance_tests/I-XOR-01.o riscv_compliance_tests/I-JAL-01.o riscv_compliance_tests/I-ENDIANESS-01.o riscv_compliance_tests/I-CSRRS-01.o riscv_compliance_tests/I-EBREAK-01.o riscv_compliance_tests/I-ADD-01.o riscv_compliance_tests/I-RF_width-01.o riscv_compliance_tests/I-CSRRW-01.o riscv_compliance_tests/I-SRA-01.o riscv_compliance_tests/I-BLT-01.o riscv_compliance_tests/I-SLL-01.o riscv_compliance_tests/I-BGE-01.o riscv_compliance_tests/I-BLTU-01.o riscv_compliance_tests/I-DELAY_SLOTS-01.o riscv_compliance_tests/I-SRLI-01.o riscv_compliance_tests/I-LBU-01.o riscv_compliance_tests/I-ORI-01.o riscv_compliance_tests/I-RF_size-01.o riscv_compliance_tests/I-BEQ-01.o riscv_compliance_tests/I-IO.o riscv_compliance_tests/I-SLLI-01.o riscv_compliance_tests/I-AND-01.o riscv_compliance_tests/I-LW-01.o riscv_compliance_tests/I-LHU-01.o riscv_compliance_tests/I-CSRRC-01.o riscv_compliance_tests/I-SRAI-01.o riscv_compliance_tests/I-SW-01.o riscv_compliance_tests/I-FENCE.I-01.o riscv_compliance_tests/I-NOP-01.o riscv_compliance_tests/I-ECALL-01.o riscv_compliance_tests/I-LH-01.o riscv_compliance_tests/I-LUI-01.o riscv_compliance_tests/I-SLTI-01.o riscv_compliance_tests/I-SLTIU-01.o riscv_compliance_tests/I-JALR-01.o riscv_compliance_tests/I-SRL-01.o riscv_compliance_tests/I-AUIPC-01.o riscv_compliance_tests/I-CSRRSI-01.o riscv_compliance_tests/I-BGEU-01.o riscv_compliance_tests/I-OR-01.o riscv_compliance_tests/I-ANDI-01.o riscv_compliance_tests/I-BNE-01.o riscv_compliance_tests/I-SB-01.o riscv_compliance_tests/I-SLT-01.o riscv_compliance_tests/I-LB-01.o -lgcc
+/mux-flow/tools/riscv-tools-32/bin/riscv32-unknown-elf-objcopy -O verilog cv32_riscv_compliance_tests_firmware/cv32_riscv_compliance_tests_firmware.elf cv32_riscv_compliance_tests_firmware/cv32_riscv_compliance_tests_firmware.hex
+mkdir -p /mux-flow/build/results/riscv-compliance && cd /mux-flow/build/results/riscv-compliance && \
+dsim -l dsim-riscv_compliance_tests.log -image dsim.out \
+	-work /mux-flow/build/repo/dsim_work -write-xml \
+	+firmware=/mux-flow/build/repo/cv32/tests/core/cv32_riscv_compliance_tests_firmware/cv32_riscv_compliance_tests_firmware.hex
+Copyright (C) 2017-2019 Metrics Technologies Inc. All rights reserved.
+This program is licensed for the exclusive use of demo,
+and may not be used otherwise without written permission from Metrics Technologies Inc.
+=S:Begin run-time elaboration and static initialization...
+=N:Starting event scheduler...
+=W:[$warning call] /mux-flow/build/repo/cv32/tests/core/../../../rtl/riscv_alu_basic.sv:313 from riscv_alu_basic @ 0
+    instruction not supported in basic alu
+[CORE] Core settings: PULP_SECURE =           1, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+
+
+!!! Running riscv-compliance-tests
+
+
+I_ADD_01..# Test Begin Reserved regs ra(x1) a0(x10) t0(x5)
+# Test part A1 - general test of value 0 with 0, 1, -1, MIN, MAX register values
+# Test part A1  - Complete
+# Test part A2 - general test of value 1 with 0, 1, -1, MIN, MAX register values
+# Test part A2  - Complete
+# Test part A3 - general test of value -1 with 0, 1, -1, MIN, MAX register values
+# Test part A3  - Complete
+# Test part A4 - general test of value 0x7FFFFFFF with 0, 1, -1, MIN, MAX register values
+# Test part A4  - Complete
+# Test part A5 - general test of value 0x80000000 with 0, 1, -1, MIN, MAX register values
+# Test part A5  - Complete
+# Test part B - testing forwarding between instructions
+# Test part B  - Complete
+# Test part C - testing writing to x0
+# Test part C  - Complete
+# Test part D - testing forwarding throught x0
+# Test part D  - Complete
+# Test part E - testing moving (add with x0)
+# Test part E  - Complete
+# Test End
+OK
+I_ADDI_01..# Test Begin Reserved regs ra(x1) a0(x10) t0(x5)
+# Test part A1 - general test of value 0 with 0, 1, -1, MIN, MAX immediate values
+# Test part A1  - Complete
+# Test part A2 - general test of value 1 with 0, 1, -1, MIN, MAX immediate values
+# Test part A2  - Complete
+# Test part A3 - general test of value -1 with 0, 1, -1, MIN, MAX immediate values
+# Test part A3  - Complete
+# Test part A4 - general test of value 0x7FFFFFFF with 0, 1, -1, MIN, MAX immediate values
+# Test part A4  - Complete
+# Test part A5 - general test of value 0x80000000 with 0, 1, -1, MIN, MAX immediate values
+# Test part A5  - Complete
+# Test part B - testing forwarding between instructions
+# Test part B  - Complete
+# Test part C - testing writing to x0
+# Test part C  - Complete
+# Test part D - testing forwarding throught x0
+# Test part D  - Complete
+# Test part E - testing moving (addi with 0)
+# Test part E  - Complete
+# Test End
+OK
+I_AND_01..# Test Begin Reserved regs ra(x1) a0(x10) t0(x5)
+# Test part A1 - general test of value 0 with 0, 1, -1, MIN, MAX register values
+# Test part A1  - Complete
+# Test part A2 - general test of value 1 with 0, 1, -1, MIN, MAX register values
+# Test part A2  - Complete
+# Test part A3 - general test of value -1 with 0, 1, -1, MIN, MAX register values
+# Test part A3  - Complete
+# Test part A4 - general test of value 0x7FFFFFFF with 0, 1, -1, MIN, MAX register values
+# Test part A4  - Complete
+# Test part A5 - general test of value 0x80000000 with 0, 1, -1, MIN, MAX register values
+# Test part A5  - Complete
+# Test part B - testing forwarding between instructions
+# Test part B  - Complete
+# Test part C - testing writing to x0
+# Test part C  - Complete
+# Test part D - testing forwarding throught x0
+# Test part D  - Complete
+# Test part E - testing moving (and with -1)
+# Test part E  - Complete
+# Test End
+OK
+I_ANDI_01..# Test Begin Reserved regs ra(x1) a0(x10) t0(x5)
+# Test part A1 - general test of value 0 with 0, 1, -1, MIN, MAX immediate values
+# Test part A1  - Complete
+# Test part A2 - general test of value 1 with 0, 1, -1, MIN, MAX immediate values
+# Test part A2  - Complete
+# Test part A3 - general test of value -1 with 0, 1, -1, MIN, MAX immediate values
+# Test part A3  - Complete
+# Test part A4 - general test of value 0x7FFFFFFF with 0, 1, -1, MIN, MAX immediate values
+# Test part A4  - Complete
+# Test part A5 - general test of value 0x80000000 with 0, 1, -1, MIN, MAX immediate values
+# Test part A5  - Complete
+# Test part B - testing forwarding between instructions
+# Test part B  - Complete
+# Test part C - testing writing to x0
+# Test part C  - Complete
+# Test part D - testing forwarding throught x0
+# Test part D  - Complete
+# Test part E - testing moving (andi with -1)
+# Test part E  - Complete
+# Test End
+OK
+I_AUIPC_01..# Test Begin Reserved regs ra(x1) a0(x10) t0(x5)
+# Test part A - general test of AUIPC
+# Test part A1  - Complete
+# Test part B - test AUIPC overwrites low bits
+# Test part A2  - Complete
+# Test part C - test loading address using auipc + addi or la alias
+# Test part A3  - Complete
+# Test End
+OK
+I_BEQ_01..# Test Begin Reserved regs ra(x1) a0(x10) t0(x5)
+# Test part A1 - general test of value 0 with 0, 1, -1, MIN, MAX register values
+# Test part A1  - Complete
+# Test part A2 - general test of value 1 with 0, 1, -1, MIN, MAX register values
+# Test part A2  - Complete
+# Test part A3 - general test of value -1 with 0, 1, -1, MIN, MAX register values
+# Test part A3  - Complete
+# Test part A4 - general test of value 0x7FFFFFFF with 0, 1, -1, MIN, MAX register values
+# Test part A4  - Complete
+# Test part A5 - general test of value 0x80000000 with 0, 1, -1, MIN, MAX register values
+# Test part A5  - Complete
+# Test part B - testing compare with x0
+# Test part B  - Complete
+# Test part C - jumps forward, backward
+# Test part C  - Complete
+# Test End
+OK
+I_BGE_01..# Test Begin Reserved regs ra(x1) a0(x10) t0(x5)
+# Test part A1 - general test of value 0 with 0, 1, -1, MIN, MAX register values
+# Test part A1  - Complete
+# Test part A2 - general test of value 1 with 0, 1, -1, MIN, MAX register values
+# Test part A2  - Complete
+# Test part A3 - general test of value -1 with 0, 1, -1, MIN, MAX register values
+# Test part A3  - Complete
+# Test part A4 - general test of value 0x7FFFFFFF with 0, 1, -1, MIN, MAX register values
+# Test part A4  - Complete
+# Test part A5 - general test of value 0x80000000 with 0, 1, -1, MIN, MAX register values
+# Test part A5  - Complete
+# Test part B - testing compare with x0
+# Test part B  - Complete
+# Test part C - jumps forward, backward
+# Test part C  - Complete
+# Test End
+OK
+I_BGEU_01..# Test Begin Reserved regs ra(x1) a0(x10) t0(x5)
+# Test part A1 - general test of value 0 with 0, 1, -1, MIN, MAX register values
+# Test part A1  - Complete
+# Test part A2 - general test of value 1 with 0, 1, -1, MIN, MAX register values
+# Test part A2  - Complete
+# Test part A3 - general test of value -1 with 0, 1, -1, MIN, MAX register values
+# Test part A3  - Complete
+# Test part A4 - general test of value 0x7FFFFFFF with 0, 1, -1, MIN, MAX register values
+# Test part A4  - Complete
+# Test part A5 - general test of value 0x80000000 with 0, 1, -1, MIN, MAX register values
+# Test part A5  - Complete
+# Test part B - testing compare with x0
+# Test part B  - Complete
+# Test part C - jumps forward, backward
+# Test part C  - Complete
+# Test End
+OK
+I_BLT_01..# Test Begin Reserved regs ra(x1) a0(x10) t0(x5)
+# Test part A1 - general test of value 0 with 0, 1, -1, MIN, MAX register values
+# Test part A1  - Complete
+# Test part A2 - general test of value 1 with 0, 1, -1, MIN, MAX register values
+# Test part A2  - Complete
+# Test part A3 - general test of value -1 with 0, 1, -1, MIN, MAX register values
+# Test part A3  - Complete
+# Test part A4 - general test of value 0x7FFFFFFF with 0, 1, -1, MIN, MAX register values
+# Test part A4  - Complete
+# Test part A5 - general test of value 0x80000000 with 0, 1, -1, MIN, MAX register values
+# Test part A5  - Complete
+# Test part B - testing compare with x0
+# Test part B  - Complete
+# Test part C - jumps forward, backward
+# Test part C  - Complete
+# Test End
+OK
+I_BLTU_01..# Test Begin Reserved regs ra(x1) a0(x10) t0(x5)
+# Test part A1 - general test of value 0 with 0, 1, -1, MIN, MAX register values
+# Test part A1  - Complete
+# Test part A2 - general test of value 1 with 0, 1, -1, MIN, MAX register values
+# Test part A2  - Complete
+# Test part A3 - general test of value -1 with 0, 1, -1, MIN, MAX register values
+# Test part A3  - Complete
+# Test part A4 - general test of value 0x7FFFFFFF with 0, 1, -1, MIN, MAX register values
+# Test part A4  - Complete
+# Test part A5 - general test of value 0x80000000 with 0, 1, -1, MIN, MAX register values
+# Test part A5  - Complete
+# Test part B - testing compare with x0
+# Test part B  - Complete
+# Test part C - jumps forward, backward
+# Test part C  - Complete
+# Test End
+OK
+I_BNE_01..# Test Begin Reserved regs ra(x1) a0(x10) t0(x5)
+# Test part A1 - general test of value 0 with 0, 1, -1, MIN, MAX register values
+# Test part A1  - Complete
+# Test part A2 - general test of value 1 with 0, 1, -1, MIN, MAX register values
+# Test part A2  - Complete
+# Test part A3 - general test of value -1 with 0, 1, -1, MIN, MAX register values
+# Test part A3  - Complete
+# Test part A4 - general test of value 0x7FFFFFFF with 0, 1, -1, MIN, MAX register values
+# Test part A4  - Complete
+# Test part A5 - general test of value 0x80000000 with 0, 1, -1, MIN, MAX register values
+# Test part A5  - Complete
+# Test part B - testing compare with x0
+# Test part B  - Complete
+# Test part C - jumps forward, backward
+# Test part C  - Complete
+# Test End
+OK
+I_CSRRC_01..# Test Begin Reserved regs ra(x1) a0(x10) t0(x5)
+# Test part A1 - general test of csrrc
+# Test part A1  - Complete
+# Test part A2 - general test of csrrc
+# Test part A2  - Complete
+# Test part B - testing forwarding between instructions
+# Test part A3  - Complete
+# Test part C - testing writing to x0 and reading from x0
+# Test part A4  - Complete
+# Test part D - testing forwarding throught x0
+# Test part A5  - Complete
+# Test part E - testing csrrc with same dst and src registers
+# Test part B  - Complete
+# Test End
+OK
+I_CSRRCI_01..# Test Begin Reserved regs ra(x1) a0(x10) t0(x5)
+# Test part A1 - general test of csrrci
+# Test part A1  - Complete
+# Test part A2 - general test of csrrci
+# Test part A2  - Complete
+# Test part B - testing writing to x0
+# Test part A3  - Complete
+# Test End
+OK
+I_CSRRS_01..# Test Begin Reserved regs ra(x1) a0(x10) t0(x5)
+# Test part A1 - general test of CSRRS
+# Test part A1  - Complete
+# Test part A2 - general test of CSRRS
+# Test part A2  - Complete
+# Test part B - testing forwarding between instructions
+# Test part A3  - Complete
+# Test part C - testing writing to x0 and reading from x0
+# Test part A4  - Complete
+# Test part D - testing forwarding throught x0
+# Test part A5  - Complete
+# Test part E - testing csrrs with same dst and src registers
+# Test part B  - Complete
+# Test End
+OK
+I_CSRRSI_01..# Test Begin Reserved regs ra(x1) a0(x10) t0(x5)
+# Test part A1 - general test of CSRRSI
+# Test part A1  - Complete
+# Test part A2 - general test of CSRRSI
+# Test part A2  - Complete
+# Test part B - testing writing to x0
+# Test part A3  - Complete
+# Test End
+OK
+I_CSRRW_01..# Test Begin Reserved regs ra(x1) a0(x10) t0(x5)
+# Test part A - general test of CSRRW
+# Test part A1  - Complete
+# Test part B - testing forwarding between instructions
+# Test part A2  - Complete
+# Test part C - testing writing to x0
+# Test part A3  - Complete
+# Test part D - testing forwarding throught x0
+# Test part A4  - Complete
+# Test part E - testing csrrw with same dst and src registers
+# Test part A5  - Complete
+# Test End
+OK
+I_CSRRWI_01..# Test Begin Reserved regs ra(x1) a0(x10) t0(x5)
+# Test part A - general test of CSRRWI
+# Test part A1  - Complete
+# Test part B - testing writing to x0
+# Test part A2  - Complete
+# Test End
+OK
+I_DELAY_SLOTS_01..# Test Begin Reserved regs ra(x1) a0(x10) t0(x5)
+# Test part A1 - test JAL
+# Test part A1  - Complete
+# Test part A2 - test JALR
+# Test part A2  - Complete
+# Test part B1 - test BEQ
+# Test part A3  - Complete
+# Test part B2 - test BNE
+# Test part A4  - Complete
+# Test part B3 - test BLT
+# Test part A5  - Complete
+# Test part B4 - test BLTU
+# Test part B  - Complete
+# Test part B5 - test BGE
+# Test part C  - Complete
+# Test part B6 - test BGEU
+# Test part D  - Complete
+# Test End
+OK
+I_EBREAK_01..# Test Begin Reserved regs ra(x1) a0(x10) t0(x5)
+# Test part A - test EBREAK
+# Test part A1  - Complete
+# Test End
+OK
+I_ECALL_01..# Test Begin Reserved regs ra(x1) a0(x10) t0(x5)
+# Test part A - test ECALL
+# Test part A1  - Complete
+# Test End
+OK
+I_ENDIANESS_01..# Test Begin Reserved regs ra(x1) a0(x10) t0(x5)
+# Test part A - test loading word by LW, LH, LB
+# Test part A1  - Complete
+# Test End
+OK
+I_FENCE.I_01..# Test Begin Reserved regs ra(x1) a0(x10) t0(x5)
+# Test part A - test fence
+# Test part A1  - Complete
+# Test End
+OK
+I_IO..# Test Begin Reserved regs ra(x1) a0(x10) t0(x5)
+# Test part A1 - general test of value 0 with 0, 1, -1, MIN, MAX register values
+# Test part A1 - Complete
+# Test part A2 - general test of value 1 with 0, 1, -1, MIN, MAX register values
+# Test part A2 - Complete
+# Test part A3 - general test of value -1 with 0, 1, -1, MIN, MAX register values
+# Test part A3 - Complete
+# Test part A4 - general test of value 0x7FFFFFFF with 0, 1, -1, MIN, MAX register values
+# Test part A4 - Complete
+# Test part A5 - general test of value 0x80000000 with 0, 1, -1, MIN, MAX register values
+# Test part A5 - Complete
+# Test part B - testing forwarding between instructions
+# Test part B - Complete
+# Test part C - testing writing to x0
+# Test part C - Complete
+# Test part D - testing forwarding throught x0
+# Test part D - Complete
+# Test part E - testing moving (add with x0)
+# Test part E - Complete
+# Test End
+OK
+I_JAL_01..# Test Begin Reserved regs ra(x1) a0(x10) t0(x5)
+# Test part A1 - general test of JAL
+# Test part A1  - Complete
+# Test part A2 - test of JAL - jumps forward, backward
+# Test part A2  - Complete
+# Test part B1 - test of JAL - linking
+# Test part A3  - Complete
+# Test part B2 - test of JAL - linking
+# Test part A4  - Complete
+# Test End
+OK
+I_JALR_01..# Test Begin Reserved regs ra(x1) a0(x10) t0(x5)
+# Test part A1 - general test of JALR
+# Test part A1  - Complete
+# Test part A2 - test of JALR - jumps forward, backward
+# Test part A2  - Complete
+# Test part B1 - test of JALR - linking
+# Test part A3  - Complete
+# Test part B2 - test of JALR - linking, low bit of address is cleared
+# Test part A4  - Complete
+# Test part C - JALR using immediate
+# Test part A5  - Complete
+# Test End
+OK
+I_LB_01..# Test Begin Reserved regs ra(x1) a0(x10) t0(x5)
+# Test part A1 - test base address + 0
+# Test part A1  - Complete
+=F:[$fatal call] /mux-flow/build/repo/cv32/tests/core/../../tb/core/mm_ram.sv:314 from tb_top.riscv_wrapper_i.ram_i.read_mux @ 1463100000ns
+
+SVA Summary:  16 assertions, 2340945 evaluations, 589119 nonvacuous passes, 5 disables
+=N:[WriteMetrics] Writing coverage metrics...
+=T:Simulation terminated by $fatal;
+  Invoked from /mux-flow/build/results/riscv-compliance
+Simulation statistics:
+    End time: 1463100000 ticks
+    Events processed: 41089123
+      Fast events: 3362918
+    Run time: 10 sec
+    Garbage collections: 15
+    Terminal heap size: 20729856
+    Total bytes allocated: 170594224
+  DSim version: 20191112.3.0 (b:S #c:28 h:4cb4e3f59)
+  Random seed: (defaulted to 1)
+out of bounds read from fffff93a

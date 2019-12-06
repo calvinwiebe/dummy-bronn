@@ -2,9 +2,9 @@
     {
         "build": "build1",
         "name": "test1",
-        "cmd": "echo 'passed' > <resultsDir>/output.log",
-        "wavesCmd": "echo 'passed w waves' > <resultsDir>/output.log",
+        "cmd": "cat <rootDir>/source.log > <resultsDir>/output.log",
+        "wavesCmd": "echo <rootDir>/source.log > <resultsDir>/output.log",
         "logFile": "output.log",
-        "isPass": ["passed"]
+        "isFail": "Simulation terminated by \\\\$fatal"
     }
 ]
