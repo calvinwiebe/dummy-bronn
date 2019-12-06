@@ -5,6 +5,6 @@
         "cmd": "cat <rootDir>/source.log > <resultsDir>/output.log",
         "wavesCmd": "echo <rootDir>/source.log > <resultsDir>/output.log",
         "logFile": "output.log",
-        "isFail": "Simulation terminated by \\\\$fatal"
+        "isFail": "Simulation terminated by \\$fatal"
     }
 ]
