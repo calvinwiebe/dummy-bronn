@@ -2,8 +2,8 @@
     {
         "build": "build1",
         "name": "test1",
-        "cmd": "cat <rootDir>/source.log > <resultsDir>/output.log",
-        "wavesCmd": "echo <rootDir>/source.log > <resultsDir>/output.log",
+        "cmd": "cat <rootDir>/source.log > <resultsDir>/output.log && dsim hello_world >> <resultsDir>/output.log",
+        "wavesCmd": "echo <rootDir>/source.log > <resultsDir>/output.log && dsim hello_world >> <resultsDir>/output.log",
         "logFile": "output.log",
         "isFail": "Simulation terminated by \\$fatal",
         "simTime": {

@@ -4,7 +4,8 @@
             "id": "b181c75f-7ff2-4e37-b17e-00d6e898664a",
             "name": "build1",
             "cmd": "echo 'I am here to simply clone the repo'",
-            "wavesCmd": "echo 'I am here to simply clone the repo with waves'"
+            "wavesCmd": "echo 'I am here to simply clone the repo with waves'",
+            "image": "nightly-toolchain:20191112.7.1-dtc.28-rc.20200123"
         }]
     },
     "regressions": [{
