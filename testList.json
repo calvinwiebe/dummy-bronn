@@ -2,7 +2,7 @@
     {
         "build": "build1",
         "name": "test1",
-        "cmd": "cat <rootDir>/source.log > <resultsDir>/output.log && dsim hello_world.sv >> <resultsDir>/output.log",
+        "cmd": "export METRICS_PROJECT_ID=1; echo '-meter-env-vars METRICS_PROJECT_ID' > $DSIM_HOME/site.options; cat <rootDir>/source.log > <resultsDir>/output.log && dsim hello_world.sv >> <resultsDir>/output.log",
         "wavesCmd": "echo <rootDir>/source.log > <resultsDir>/output.log && dsim hello_world.sv >> <resultsDir>/output.log",
         "logFile": "output.log",
         "isFail": "Simulation terminated by \\$fatal",
