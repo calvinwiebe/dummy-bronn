@@ -1,4 +1,4 @@
-EDITED BY CALVIN
+EDITED BY CALVIN x2
 mkdir -p /mux-flow/build/results
 cd /mux-flow/build/results && dsim \
 	-timescale 1ns/1ps \
