@@ -5,8 +5,8 @@
         "cmd": "export METRICS_PROJECT_ID=1 && echo \"-meter-env-vars METRICS_PROJECT_ID\" > $DSIM_HOME/dsim.options && cat <rootDir>/source.log > <resultsDir>/output.log && dsim hello_world.sv >> <resultsDir>/output.log 2>&1",
         "wavesCmd": "echo <rootDir>/source.log > <resultsDir>/output.log && dsim hello_world.sv >> <resultsDir>/output.log",
         "logFile": "output.log",
-        "metricsFile": null,
-        "wavesFile": null,
+        "metricsFile": false,
+        "wavesFile": false,
         "isFail": "Simulation terminated by \\$fatal",
         "simTime": {
             "time": "End time: (\\d+) ticks",
