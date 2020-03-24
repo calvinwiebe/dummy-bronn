@@ -9,7 +9,7 @@
             "name": "build2",
             "cmd": "echo 'I am here to fail' && exit 1",
             "wavesCmd": "echo 'I am here to fail with waves' && exit 1'",
-            "image": "nightly-toolchain:latest"
+            "image": "nightly-toolchain:unknown"
         }]
     },
     "regressions": [{
@@ -28,7 +28,7 @@
         "tests": {
             "builds": ["build2"],
             "listCmd": "echo \"I do nothing\"",
-            "listFile": "<rootDir>/testList.json"
+            "listFile": "<rootDir>/testList2.json"
         }
     }]
 }
