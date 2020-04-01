@@ -30,5 +30,52 @@
             "listCmd": "echo \"I do nothing\"",
             "listFile": "<rootDir>/testList2.json"
         }
+    }, {
+        "name": "dummy-deep-artifact-paths",
+        "description": "A dummy regression twice",
+        "verbose": true,
+        "tests": {
+            "builds": ["build1"],
+            "list": [
+                {
+                    "build": "build1",
+                    "name": "test_deep_artifacts",
+                    "cmd": "export METRICS_PROJECT_ID=1 && echo \"-meter-env-vars METRICS_PROJECT_ID\" > $DSIM_HOME/dsim.options && cat <rootDir>/source.log > <resultsDir>/deep/path/to/output.log && dsim hello_world.sv >> <resultsDir>/deep/path/to/output.log 2>&1",
+                    "wavesCmd": "echo <rootDir>/source.log > <resultsDir>/deep/path/to/output.log && dsim hello_world.sv >> <resultsDir>/deep/path/to/output.log",
+                    "logFile": "deep/path/to/output.log",
+                    "metricsFile": false,
+                    "wavesFile": false,
+                    "isFail": "Simulation terminated by \\$fatal",
+                    "simTime": {
+                        "time": "End time: (\\d+) ticks",
+                        "unit": "timescale (\\d+\\w\\w)"
+                    }
+                }
+            ]
+        }
+    }, {
+        "name": "dummy-default-log-plus-isPassFile",
+        "description": "A dummy regression thrice",
+        "verbose": true,
+        "tests": {
+            "builds": ["build1"],
+            "list": [
+                {
+                    "build": "build1",
+                    "name": "test_default_log_ispass",
+                    "cmd": "export METRICS_PROJECT_ID=1 && echo \"-meter-env-vars METRICS_PROJECT_ID\" > $DSIM_HOME/dsim.options && cat <rootDir>/source.log > <resultsDir>/output.log && dsim hello_world.sv >> <resultsDir>/output.log 2>&1",
+                    "wavesCmd": "echo <rootDir>/source.log > <resultsDir>/output.log && dsim hello_world.sv >> <resultsDir>/output.log",
+                    "metricsFile": false,
+                    "wavesFile": false,
+                    "isPassCmd": "echo 'passed' > <resultsDir>/ispass",
+                    "isPassFile": "<resultsDir>/ispass",
+                    "simTime": {
+                        "time": "End time: (\\d+) ticks",
+                        "unit": "timescale (\\d+\\w\\w)"
+                    }
+                }
+            ]
+        }
     }]
 }
+
