@@ -40,8 +40,8 @@
                 {
                     "build": "build1",
                     "name": "test_deep_artifacts",
-                    "cmd": "export METRICS_PROJECT_ID=1 && echo \"-meter-env-vars METRICS_PROJECT_ID\" > $DSIM_HOME/dsim.options && cat <rootDir>/source.log > <resultsDir>/deep/path/to/output.log && dsim hello_world.sv >> <resultsDir>/deep/path/to/output.log 2>&1",
-                    "wavesCmd": "echo <rootDir>/source.log > <resultsDir>/deep/path/to/output.log && dsim hello_world.sv >> <resultsDir>/deep/path/to/output.log",
+                    "cmd": "export METRICS_PROJECT_ID=1 && echo \"-meter-env-vars METRICS_PROJECT_ID\" > $DSIM_HOME/dsim.options && mkdir -p <resultsDir>/deep/path/to && cat <rootDir>/source.log > <resultsDir>/deep/path/to/output.log && dsim hello_world.sv >> <resultsDir>/deep/path/to/output.log 2>&1",
+                    "wavesCmd": "mkdir -p <resultsDir>/deep/path/to && echo <rootDir>/source.log > <resultsDir>/deep/path/to/output.log && dsim hello_world.sv >> <resultsDir>/deep/path/to/output.log",
                     "logFile": "deep/path/to/output.log",
                     "metricsFile": false,
                     "wavesFile": false,
