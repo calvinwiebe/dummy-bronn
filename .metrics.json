@@ -67,7 +67,7 @@
                     "wavesCmd": "echo <rootDir>/source.log > <resultsDir>/output.log && dsim hello_world.sv >> <resultsDir>/output.log",
                     "metricsFile": false,
                     "wavesFile": false,
-                    "isPassCmd": "echo 'passed' > <resultsDir>/ispass",
+                    "isPassCmd": "echo <logFile> && echo 'passed' > <resultsDir>/ispass",
                     "isPassFile": "<resultsDir>/ispass",
                     "simTime": {
                         "time": "End time: (\\d+) ticks",
