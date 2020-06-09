@@ -3,7 +3,7 @@
         "list": [{
             "name": "build1",
             "cmd": "env && echo 'I am here to simply clone the repo' && echo <rootDir> && echo <commit>",
-            "wavesCmd": "env && echo 'I am here to simply clone the repo with waves' && echo <rootDir> && echo <commit>",
+            "wavesCmd": "env && echo 'I am here to simply clone the repo with waves' && echo 'This is our commit <commit>' > <rootDir>/blarg.txt",
             "image": "nightly-toolchain:latest"
         },{
             "name": "build2",
