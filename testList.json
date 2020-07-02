@@ -3,7 +3,7 @@
         "build": "build1",
         "name": "test1",
         "cmd": "env && cat <rootDir>/blarg.txt && cat <rootDir>/source.log > <resultsDir>/output.log && dsim hello_world.sv >> <resultsDir>/output.log 2>&1",
-        "wavesCmd": "echo <rootDir>/source.log > <resultsDir>/output.log && dsim hello_world.sv >> <resultsDir>/output.log",
+        "wavesCmd": "echo WAVES! && echo <rootDir>/source.log > <resultsDir>/output.log && dsim hello_world.sv >> <resultsDir>/output.log",
         "logFile": "output.log",
         "metricsFile": false,
         "wavesFile": false,

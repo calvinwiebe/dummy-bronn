@@ -3,7 +3,7 @@
         "list": [{
             "name": "build1",
             "cmd": "echo \"This is our commit <commit>\" > <rootDir>/blarg.txt",
-            "wavesCmd": "echo \"This is our commit <commit>\" > <rootDir>/blarg.txt",
+            "wavesCmd": "echo WAVES! && echo \"This is our commit <commit>\" > <rootDir>/blarg.txt",
             "image": "nightly-toolchain:latest"
         },{
             "name": "build2",
