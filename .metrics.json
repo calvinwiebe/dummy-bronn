@@ -1,7 +1,7 @@
 {
     "builds": {
-        "cpu": 0,
-        "memory": 0,
+        "cpu": "0",
+        "memory": "0",
         "list": [{
             "name": "build1",
             "cmd": "echo \"This is our commit <commit>\" > <rootDir>/blarg.txt",
@@ -19,8 +19,8 @@
         "description": "A dummy regression",
         "verbose": true,
         "tests": {
-            "cpu": 0,
-            "memory": 0,
+            "cpu": "0",
+            "memory": "0",
             "builds": ["build1"],
             "listCmd": "echo \"I do nothing\"",
             "listFile": "<rootDir>/testList.json"
@@ -30,8 +30,8 @@
         "description": "A dummy regression",
         "verbose": true,
         "tests": {
-            "cpu": 0,
-            "memory": 0,
+            "cpu": "0",
+            "memory": "0",
             "builds": ["build2"],
             "listCmd": "echo \"I do nothing\"",
             "listFile": "<rootDir>/testList2.json"
@@ -42,8 +42,8 @@
         "verbose": true,
         "tests": {
             "builds": ["build1"],
-            "cpu": 0,
-            "memory": 0,
+            "cpu": "0",
+            "memory": "0",
             "list": [
                 {
                     "build": "build1",
@@ -67,8 +67,8 @@
         "verbose": true,
         "tests": {
             "builds": ["build1"],
-            "cpu": 0,
-            "memory": 0,
+            "cpu": "0",
+            "memory": "0",
             "list": [
                 {
                     "build": "build1",
