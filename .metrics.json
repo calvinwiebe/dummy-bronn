@@ -20,7 +20,7 @@
         "verbose": true,
         "tests": {
             "cpu": "0",
-            "memory": "0",
+            "memory": ".5",
             "builds": ["build1"],
             "listCmd": "echo \"I do nothing\"",
             "listFile": "<rootDir>/testList.json"
