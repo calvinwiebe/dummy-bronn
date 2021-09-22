@@ -12,6 +12,11 @@
             "cmd": "echo 'I am here to fail' && exit 1",
             "wavesCmd": "echo 'I am here to fail with waves' && exit 1'",
             "image": "nightly-toolchain:unknown"
+        }, {
+            "name": "no-dsim",
+            "cmd": "echo 'I can run without dsim' && exit 0",
+            "wavesCmd": "echo 'I can run without dsim' && exit 0",
+            "image": "debian"
         }]
     },
     "regressions": [{
@@ -24,6 +29,31 @@
             "builds": ["build1"],
             "listCmd": "echo \"I do nothing\"",
             "listFile": "<rootDir>/testList.json"
+        }
+    }, {
+        "name": "dummy-no-dsim",
+        "description": "A dummy regression without dsim dep",
+        "verbose": true,
+        "tests": {
+            "cpu": "0",
+            "memory": "1",
+            "builds": ["no-dsim"],
+            "list": [
+                {
+                    "build": "no-dsim",
+                    "name": "no-dsim-test",
+                    "cmd": "echo 'I can run without dsim' > output.log",
+                    "wavesCmd": "echo 'I can run without dsim' > output.log",
+                    "logFile": "output.log",
+                    "metricsFile": false,
+                    "wavesFile": false,
+                    "isFail": "Simulation terminated by \\$fatal",
+                    "simTime": {
+                        "time": "End time: (\\d+) ticks",
+                        "unit": "timescale (\\d+\\w\\w)"
+                    }
+                }
+            ]
         }
     }, {
         "name": "dummy-build-fail",
